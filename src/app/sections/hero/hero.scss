@@ -1,0 +1,90 @@
+@use 'styles' as global;
+
+.hero-container {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  // Camada da Imagem de Fundo
+  background-image: url('/hero_image.webp'); // Certifique-se que o nome do arquivo na pasta public está correto
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed; // Cria um efeito de profundidade (Parallax) no scroll
+
+  // Camada de Overlay (O pulo do gato para legibilidade)
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    // Gradiente que vai do azul marinho suave para o sólido na base
+    background: linear-gradient(
+      to bottom,
+      rgba(global.$color-navy-bg, 0.5) 0%, 
+      rgba(global.$color-navy-bg, 0.8) 70%,
+      global.$color-navy-bg 100%
+    );
+    z-index: 1;
+  }
+
+  .content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .logo-wrapper {
+    margin-bottom: 2rem;
+    .logo { width: 200px; opacity: 0.9; }
+  }
+
+  .names {
+    font-family: 'Amsterdam Four', cursive;
+    font-size: 3.5rem;
+    margin: 0;
+    color: global.$color-champagne-gold;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+  }
+
+  .quote {
+    font-style: italic;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }
+
+  .countdown {
+    display: flex;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    justify-content: center;
+
+    .time-block {
+      display: flex;
+      flex-direction: column;
+      border: 1px solid rgba(global.$color-champagne-gold, 0.3);
+      padding: 15px;
+      min-width: 80px;
+      border-radius: 8px; // Ou use clip-path para fazer o hexagono
+      
+      .value {
+        font-size: 1.8rem;
+        font-weight: 700;
+        color: global.$color-champagne-gold;
+      }
+      
+      .label {
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        margin-top: 5px;
+      }
+    }
+  }
+}

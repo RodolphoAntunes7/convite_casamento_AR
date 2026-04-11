@@ -1,29 +1,71 @@
-/* src/styles.scss */
+// 2. Variáveis de Cor (Baseadas no Convite)
+$color-navy-bg: #1B263B;
+$color-champagne-gold: #E5D3B3;
+$color-off-white-text: #F4F4F9;
 
-// Use ./ para garantir que ele procure na pasta styles vizinha
-@import './styles/variables';
-@import './styles/reset';
-
-// 1. Configuração da Raiz
-html {
-  height: 100%; // Força a altura
-  overflow: hidden; // Proíbe rolagem
-}
-
-// 2. Configuração do Corpo
+// 3. Estilos Globais
 body {
-  height: 100%; // Força a altura
-  margin: 0; // Remove borda branca
-  padding: 0;
-  background-color: black; // SEGURO: Fundo preto se tudo falhar
-  overflow: hidden;
-  position: fixed; 
-  width: 100%;
+  margin: 0;
+  background-color: $color-navy-bg;
+  color: $color-off-white-text;
+  font-family: 'The Seasons', serif; // Fonte padrão para o corpo
+  -webkit-font-smoothing: antialiased;
 }
 
-// 3. Configuração do Angular App
-app-root {
-  display: block; // Importante! Tags customizadas não têm display padrão
-  height: 100%; // Ocupa todo o body
-  width: 100%;
+h1, h2, h3 {
+  font-weight: 700;
+  color: $color-champagne-gold;
+}
+
+// Classe utilitária para a fonte manuscrita
+.font-script {
+  font-family: 'Great Vibes', cursive;
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'The Seasons';
+  src: url('/TheSeasons-Regular.otf') format('opentype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'The Seasons';
+  src: url('/TheSeasons-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Amsterdam Four';
+  src: url('/amsterdam-four.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap; 
+}
+
+// Estilo básico para botões "Pill Shape" e "Ghost"
+.btn-gold {
+  background-color: $color-champagne-gold;
+  color: $color-navy-bg;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-family: 'Playfair Display', serif;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    opacity: 0.9;
+    transform: translateY(-2px);
+  }
+}
+
+.btn-ghost {
+  background-color: transparent;
+  color: $color-champagne-gold;
+  border: 2px solid $color-champagne-gold;
+  // ... outros estilos similares ao .btn-gold
 }

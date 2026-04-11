@@ -1,12 +1,19 @@
-import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { LandingComponent } from './landing/landing.component';
+import { Component, signal } from '@angular/core';
+import { DressCode } from './sections/dress-code/dress-code';
+import { Galeria } from './sections/galeria/galeria';
+import { Localizacao } from './sections/localizacao/localizacao';
+import { HeroComponent } from './sections/hero/hero';
+import { NossaHistoria } from './sections/nossa-historia/nossa-historia';
+import { Rsvp } from './sections/rsvp/rsvp';
+import { StickyNav } from './components/sticky-nav/sticky-nav';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [CommonModule, LandingComponent],
-  template: `<app-landing></app-landing>`,
-  styles: []
+  imports: [DressCode, Galeria, HeroComponent, Localizacao, NossaHistoria, Rsvp, StickyNav],
+  templateUrl: './app.html',
+  styleUrl: './app.scss'
 })
-export class AppComponent {}
+export class App {
+  protected readonly title = signal('convite_casamento_AR');
+}

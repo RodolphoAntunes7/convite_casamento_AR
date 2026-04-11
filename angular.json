@@ -6,7 +6,7 @@
   },
   "newProjectRoot": "projects",
   "projects": {
-    "save-the-date": {
+    "convite_casamento_AR": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -26,14 +26,23 @@
             "assets": [
               {
                 "glob": "**/*",
-                "input": "public"
-              },
-              "src/favicon.ico",
-              "src/assets"
+                "input": "public",
+                "output": "/"
+              }
             ],
             "styles": [
               "src/styles.scss"
-            ]
+            ],
+            "server": "src/main.server.ts",
+            "outputMode": "server",
+            "ssr": {
+              "entry": "src/server.ts"
+            },
+            "stylePreprocessorOptions": {
+              "includePaths": [
+                "src"
+              ]
+            }
           },
           "configurations": {
             "production": {
@@ -63,10 +72,10 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "save-the-date:build:production"
+              "buildTarget": "convite_casamento_AR:build:production"
             },
             "development": {
-              "buildTarget": "save-the-date:build:development"
+              "buildTarget": "convite_casamento_AR:build:development"
             }
           },
           "defaultConfiguration": "development"
