@@ -1,0 +1,89 @@
+@use 'styles' as global;
+
+.historia-container {
+  padding: 40px 0;
+  background-color: global.$color-navy-bg;
+  color: global.$color-off-white-text;
+  overflow: hidden;
+
+  .texto-historia {
+    max-width: 800px;
+    margin: 0 auto 60px;
+    padding: 0 1.5rem;
+    text-align: center;
+
+    .titulo {
+      font-family: 'The Seasons', serif;
+      font-size: 3rem;
+      color: global.$color-champagne-gold;
+      margin-bottom: 2rem;
+    }
+
+    .paragrafo {
+      font-size: 1.1rem;
+      line-height: 1.8;
+      opacity: 0.9;
+      font-family: 'The Seasons', serif;
+    }
+  }
+
+  .carrossel-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+    .track {
+      display: flex;
+      width: fit-content;
+      will-change: transform;
+
+      .image-group {
+        display: flex;
+        gap: 20px;
+        padding-right: 20px;
+
+        img {
+          height: 250px;
+          width: 350px;
+          object-fit: cover;
+          border-radius: 4px;
+          // Filtro sutil para as fotos conversarem com o azul marinho
+          filter: sepia(0.2) contrast(1.1);
+        }
+      }
+    }
+
+    // Animações
+    .track-right {
+      animation: scrollRight 40s linear infinite;
+    }
+
+    .track-left {
+      animation: scrollLeft 40s linear infinite;
+    }
+  }
+}
+
+@keyframes scrollRight {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes scrollLeft {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+// Ajustes Mobile
+@media (max-width: 768px) {
+  .historia-container {
+    padding: 40px 0;
+    
+    .texto-historia .titulo { font-size: 2.2rem; }
+    
+    .carrossel-wrapper .track .image-group img {
+      height: 180px;
+      width: 250px;
+    }
+  }
+}

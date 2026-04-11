@@ -1,0 +1,106 @@
+@use 'styles' as global;
+
+.localizacao-container {
+  padding: 100px 1.5rem;
+  background-color: global.$color-navy-bg;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+
+  .content-box {
+    max-width: 600px;
+    width: 100%;
+  }
+
+  .titulo {
+    font-family: 'The Seasons', serif;
+    font-size: 3rem;
+    color: global.$color-champagne-gold;
+    margin-bottom: 2.5rem;
+  }
+
+  .info-evento {
+    margin-bottom: 3rem;
+
+    .local-nome {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: global.$color-off-white-text;
+      margin-bottom: 0.5rem;
+    }
+
+    .endereco, .cidade {
+      font-family: serif;
+      font-size: 1.1rem;
+      opacity: 0.8;
+      margin: 0;
+    }
+
+    .divisor {
+      width: 50px;
+      border: 0;
+      border-top: 1px solid global.$color-champagne-gold;
+      margin: 1.5rem auto;
+    }
+
+    .data-hora {
+      font-family: 'The Seasons', serif;
+      font-size: 1.4rem;
+      color: global.$color-champagne-gold;
+    }
+  }
+
+  .acoes-gps {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .btn-gps {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 30px;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+
+      .icon-png {
+        width: 24px;   // Tamanho ideal para ícones de botão
+        height: 24px;
+        object-fit: contain;
+        
+        // Se o seu PNG for muito colorido e você quiser que ele 
+        // combine com o dourado, pode aplicar um filtro (opcional)
+        // filter: brightness(0) saturate(100%) invert(86%) sepia(19%) saturate(674%) hue-rotate(357deg) brightness(94%) contrast(90%);
+  }
+
+      &.google-maps {
+        background-color: global.$color-champagne-gold;
+        color: global.$color-navy-bg;
+        border: 1px solid global.$color-champagne-gold;
+      }
+
+      &.waze {
+        background-color: transparent;
+        color: global.$color-champagne-gold;
+        border: 1px solid global.$color-champagne-gold;
+      }
+
+      &:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      }
+    }
+  }
+}

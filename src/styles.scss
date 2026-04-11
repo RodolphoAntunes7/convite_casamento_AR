@@ -1,3 +1,6 @@
+// 1. Importação de Fontes (Sugestão para V1)
+@import url('https://fonts.googleapis.com/css2?family=Great+Vibe&family=Playfair+Display:wght@400;700&display=swap');
+
 // 2. Variáveis de Cor (Baseadas no Convite)
 $color-navy-bg: #1B263B;
 $color-champagne-gold: #E5D3B3;
@@ -28,6 +31,7 @@ h1, h2, h3 {
   src: url('/TheSeasons-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
+  unicode-range: U+0000-002C, U+002E-007F, U+00A0-00FF;
 }
 
 @font-face {
@@ -35,6 +39,7 @@ h1, h2, h3 {
   src: url('/TheSeasons-Bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
+  unicode-range: U+0000-002C, U+002E-007F, U+00A0-00FF;
 }
 
 @font-face {
