@@ -1,0 +1,144 @@
+@use 'styles' as global;
+
+.rsvp-container {
+  padding: 20px; // Reduzido para aproximar das outras seções
+  background-color: global.$color-navy-bg;
+  color: global.$color-off-white-text;
+  text-align: center;
+
+  .content {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .titulo {
+    font-family: 'The Seasons', serif;
+    font-size: 2.8rem;
+    color: global.$color-champagne-gold;
+    margin-bottom: 2rem;
+  }
+
+  .subtitulo {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    opacity: 0.9;
+  }
+
+  // Botão de Presentes (Estilo Secundário)
+  .btn-secundario {
+    display: inline-block;
+    padding: 14px 30px;
+    border: 1px solid global.$color-champagne-gold;
+    color: global.$color-champagne-gold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    border-radius: 50px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background-color: rgba(global.$color-champagne-gold, 0.1);
+      transform: translateY(-2px);
+    }
+  }
+
+  // Divisor entre as ações
+  .divisor-rsvp {
+    margin: 2.5rem 0;
+    position: relative;
+    border-bottom: 1px solid rgba(global.$color-champagne-gold, 0.2);
+    
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: global.$color-navy-bg;
+      padding: 0 15px;
+      font-family: 'The Seasons', serif;
+      font-style: italic;
+      color: global.$color-champagne-gold;
+      opacity: 0.6;
+    }
+  }
+
+  // Botão de RSVP (Estilo Primário)
+  .btn-rsvp {
+    display: inline-block;
+    padding: 18px 45px;
+    background-color: global.$color-champagne-gold;
+    color: global.$color-navy-bg;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    border-radius: 50px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(global.$color-champagne-gold, 0.4);
+      filter: brightness(1.1);
+    }
+  }
+
+  .prazo {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: global.$color-champagne-gold;
+    opacity: 0.7;
+  }
+
+  .gift-icon-link {
+    text-decoration: none; // Remove qualquer estilo padrão de link
+    display: inline-block;
+    transition: transform 0.3s ease;
+
+    &:hover {
+      transform: scale(1.1); // Leve aumento ao passar o mouse
+      
+      .gift-icon {
+        filter: brightness(1.2) saturate(100%) invert(86%) sepia(19%) 
+                saturate(674%) hue-rotate(357deg) brightness(94%) contrast(90%);
+      }
+    }
+
+    &:active {
+      transform: scale(0.95); // Efeito de "pressionado" ao clicar
+    }
+  }
+
+  .main-icon-wrapper {
+    margin-bottom: 20px;
+    cursor: pointer;
+
+    .gift-icon {
+      width: 80px;
+      height: 80px;
+      object-fit: contain;
+      filter: brightness(0) saturate(100%) invert(86%) sepia(19%) 
+              saturate(674%) hue-rotate(357deg) brightness(94%) contrast(90%);
+      transition: filter 0.3s ease;
+    }
+  }
+
+  .presentes-wrapper {
+    display: flex;
+    flex-direction: column; // Garante o empilhamento vertical
+    align-items: center;    // Centraliza os itens horizontalmente
+    gap: 1.5rem;            // Espaçamento consistente entre ícone, texto e botão
+
+    .icon-block, .button-block {
+      width: 100%;          // Ocupa a largura total para forçar a quebra
+      display: flex;
+      justify-content: center;
+    }
+  }
+}

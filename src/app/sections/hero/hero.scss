@@ -68,12 +68,48 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .textInvite {
+    font-family: 'The Seasons', serif;
+    font-style: italic;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+  }
+
+  .divisor-text {
+    margin: 2.5rem 0;
+    position: relative;
+    border-bottom: 1px solid rgba(global.$color-champagne-gold, 0.2);
+    
+    span {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: global.$color-navy-bg;
+      padding: 0 15px;
+      font-family: 'The Seasons', serif;
+      font-style: italic;
+      color: global.$color-champagne-gold;
+      opacity: 0.6;
+    }
+  }
+
   .quote {
     font-family: 'Great Vibes';
     font-style: italic;
     margin-top: 1rem;
     letter-spacing: 1px;
     opacity: 0.8;
+  }
+
+  .subquote {
+    font-family: 'Great Vibes';
+    font-style: italic;
+    margin-top: 1rem;
+    letter-spacing: 1px;
+    opacity: 0.8;
+    font-size: 2vw;
   }
 
   .countdown {

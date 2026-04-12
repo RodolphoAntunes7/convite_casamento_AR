@@ -31,7 +31,7 @@ h1, h2, h3 {
   src: url('/TheSeasons-Regular.otf') format('opentype');
   font-weight: normal;
   font-style: normal;
-  unicode-range: U+0000-002C, U+002E-007F, U+00A0-00FF;
+  unicode-range: U+0000-0020, U+0022-0027, U+002A-002C, U+002E, U+0030-007F, U+00A0-00FF;
 }
 
 @font-face {
@@ -39,7 +39,7 @@ h1, h2, h3 {
   src: url('/TheSeasons-Bold.otf') format('opentype');
   font-weight: bold;
   font-style: normal;
-  unicode-range: U+0000-002C, U+002E-007F, U+00A0-00FF;
+  unicode-range: U+0000-0020, U+0022-0027, U+002A-002C, U+002E, U+0030-007F, U+00A0-00FF;
 }
 
 @font-face {

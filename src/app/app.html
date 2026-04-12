@@ -1,6 +1,13 @@
-<app-hero></app-hero>
-<app-nossa-historia></app-nossa-historia>
-<app-localizacao></app-localizacao>
-<app-dress-code></app-dress-code>
-<app-rsvp></app-rsvp>
-<app-sticky-nav></app-sticky-nav>
+<main class="infinite-container">
+  @for (section of sections(); track $index) {
+    <ng-container *ngComponentOutlet="section"></ng-container>
+    
+    @if ($index === 4) {
+      <div #navTrigger class="trigger-point"></div>
+    }
+  }
+
+  <div #infiniteSentinel class="sentinel"></div>
+
+  <app-sticky-nav [class.visible]="showNav()"></app-sticky-nav>
+</main>

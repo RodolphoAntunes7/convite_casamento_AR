@@ -1,0 +1,97 @@
+@use 'styles' as global;
+
+.dress-code-container {
+  padding: 20px;
+  background-color: global.$color-navy-bg;
+  color: global.$color-off-white-text;
+  text-align: center;
+
+  .titulo {
+    font-family: 'The Seasons', serif;
+    font-size: 3rem;
+    color: global.$color-champagne-gold;
+    margin-bottom: 1rem;
+  }
+
+  .subtitulo {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 3rem;
+    opacity: 0.8;
+  }
+
+  .trajes-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    max-width: 900px;
+    margin: 0 auto;
+
+    @media (min-width: 768px) {
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .traje-card {
+      flex: 1;
+      padding: 30px;
+      border: 1px solid rgba(global.$color-champagne-gold, 0.3);
+      border-radius: 12px;
+      background: rgba(255, 255, 255, 0.03);
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: translateY(-5px);
+        border-color: global.$color-champagne-gold;
+      }
+
+      .icon-wrapper {
+        margin-bottom: 8px;
+        display: flex;
+        justify-content: center;
+        img {
+          width: 100px;
+          height: 100px;
+          object-fit: contain;
+          filter: brightness(0) saturate(100%) invert(86%) sepia(19%) 
+                  saturate(674%) hue-rotate(357deg) brightness(94%) contrast(90%);
+          
+          transition: transform 0.3s ease;
+          
+        }
+      }
+
+      h3 {
+        font-family: 'The Seasons', serif;
+        font-size: 2rem;
+        color: global.$color-champagne-gold;
+        margin-bottom: 10px;
+      }
+
+      p {
+        font-size: 1rem;
+        line-height: 1.5;
+        opacity: 0.9;
+        max-width: 280px; // Mantém o texto centralizado e legível sob o ícone
+        margin: 0 auto;
+      }
+
+      &:hover {
+        .icon-wrapper img {
+          transform: scale(1.5);
+        }
+      }
+    }
+  }
+
+  .dica-inverno {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: global.$color-champagne-gold;
+    border: 1px dashed rgba(global.$color-champagne-gold, 0.4);
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+  }
+}

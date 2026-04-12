@@ -5,27 +5,32 @@
     <div class="logo-wrapper">
       <img src="logo-vazada-gold.png" alt="A & R" class="logo">
     </div>
-
+    <p class="textInvite">Com alegria em seus corações,</p>
     <h1 class="names font-script">Ana Carolina</h1>
     <h1 class="quote">&</h1>
     <h1 class="names font-script">Rodolpho</h1>
+    <p class="textInvite">convidam você para o dia do seu casamento.</p>
+
+    <div class="divisor-text"><span></span></div>
+
     <p class="quote">"O amor é paciente, o amor é bondoso."</p>
+    <p class="subquote">- 1 Coríntios 13:4 -</p>
 
     <div class="countdown">
       <div class="time-block">
-        <span class="value">{{ cast.days }}</span>
+        <span class="value">{{ cast().days }}</span>
         <span class="label">DIAS</span>
       </div>
       <div class="time-block">
-        <span class="value">{{ cast.hours }}</span>
+        <span class="value">{{ cast().hours }}</span>
         <span class="label">HORAS</span>
       </div>
       <div class="time-block">
-        <span class="value">{{ cast.minutes }}</span>
+        <span class="value">{{ cast().minutes }}</span>
         <span class="label">MINUTOS</span>
       </div>
       <div class="time-block">
-        <span class="value">{{ cast.seconds }}</span>
+        <span class="value">{{ cast().seconds }}</span>
         <span class="label">SEGUNDOS</span>
       </div>
     </div>

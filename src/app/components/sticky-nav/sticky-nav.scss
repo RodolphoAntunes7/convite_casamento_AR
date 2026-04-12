@@ -1,0 +1,107 @@
+@use 'styles' as global;
+
+:host {
+  // --- Configurações de Posicionamento e Camada ---
+  position: fixed;
+  bottom: 25px;
+  left: 50%;
+  z-index: 1000;
+  width: 85%;
+  max-width: 400px;
+  
+  // --- Estado Inicial (Escondido para a animação de entrada) ---
+  opacity: 0;
+  transform: translate(-50%, 100px); // Começa abaixo da tela
+  pointer-events: none; // Desativa interação enquanto invisível
+  
+  // --- Design Premium: Glassmorphism ---
+  background: rgba(global.$color-navy-bg, 0.85);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border: 1px solid rgba(global.$color-champagne-gold, 0.2);
+  border-radius: 40px;
+  padding: 8px 15px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+
+  // --- Transição de Entrada (Cubic Bezier para fluidez) ---
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+
+  // --- Classe Ativada via Intersection Observer ---
+  &.visible {
+    opacity: 1;
+    transform: translate(-50%, 0);
+    pointer-events: auto;
+  }
+
+  .nav-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+
+  .nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    color: global.$color-off-white-text;
+    transition: all 0.3s ease;
+    opacity: 0.8;
+    flex: 1;
+
+    .nav-icon {
+      width: 22px;
+      height: 22px;
+      margin-bottom: 4px;
+      stroke: global.$color-off-white-text; // Cor base do ícone
+      transition: stroke 0.3s ease;
+    }
+
+    .label {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    // --- Feedback Visual: Hover e Toque (Mobile Friendly) ---
+    &:hover, &:focus {
+      opacity: 1;
+      transform: translateY(-3px);
+      
+      .nav-icon {
+        stroke: global.$color-champagne-gold;
+      }
+      .label {
+        color: global.$color-champagne-gold;
+      }
+    }
+
+    &:active {
+      transform: scale(0.9); // Feedback tátil de clique
+    }
+
+    // --- Destaque especial para o botão de Confirmar (RSVP) ---
+    &.rsvp-highlight {
+      opacity: 1;
+      
+      .nav-icon {
+        stroke: global.$color-champagne-gold;
+        stroke-width: 2.5; // Um pouco mais grosso para destaque
+      }
+      
+      .label {
+        color: global.$color-champagne-gold;
+        font-weight: 700;
+      }
+    }
+  }
+}
+
+// Ajuste para evitar conflitos com a "Home Indicator" do iPhone em telas mobile
+@media (max-width: 768px) {
+  .sticky-nav {
+    bottom: calc(20px + env(safe-area-inset-bottom));
+  }
+}

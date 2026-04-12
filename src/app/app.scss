@@ -1,0 +1,29 @@
+.infinite-container {
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+// Otimização de Tech Lead: contain-intrinsic-size
+// Ajuda o browser a estimar o tamanho das seções antes de renderizar
+ng-container {
+  content-visibility: auto;
+  contain-intrinsic-size: 100vh; 
+}
+
+.trigger-point {
+  height: 1px;
+  width: 100%;
+  visibility: hidden;
+}
+
+.sentinel {
+  height: 20px;
+  width: 100%;
+  background: transparent;
+}
+
+// Garante que a Nav fixa não seja afetada pelo overflow do container
+app-sticky-nav {
+  z-index: 9999 !important;
+}
