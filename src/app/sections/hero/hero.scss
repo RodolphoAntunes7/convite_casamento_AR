@@ -2,7 +2,8 @@
 
 .hero-container {
   position: relative;
-  height: 100vh;
+  min-height: 100vh;
+  min-height: 100svh;
   width: 100%;
   display: flex;
   align-items: center;
@@ -10,10 +11,16 @@
   overflow: hidden;
 
   // Camada da Imagem de Fundo
-  background-image: url('/hero_image.webp'); // Certifique-se que o nome do arquivo na pasta public está correto
+  background-image: url("../../../assets/images/hero_image.webp");
+  background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
   background-attachment: fixed; // Cria um efeito de profundidade (Parallax) no scroll
+
+  @media (max-width: 768px) {
+    background-position: center top; 
+    background-attachment: scroll; 
+  }
 
   // Camada de Overlay (O pulo do gato para legibilidade)
   &::before {
@@ -69,7 +76,7 @@
   }
 
   .textInvite {
-    font-family: 'The Seasons', serif;
+    font-family: 'Great Vibes';
     font-style: italic;
     margin-top: 1rem;
     letter-spacing: 1px;
@@ -88,7 +95,7 @@
       transform: translate(-50%, -50%);
       background-color: global.$color-navy-bg;
       padding: 0 15px;
-      font-family: 'The Seasons', serif;
+      font-family: 'Great Vibes', serif;
       font-style: italic;
       color: global.$color-champagne-gold;
       opacity: 0.6;

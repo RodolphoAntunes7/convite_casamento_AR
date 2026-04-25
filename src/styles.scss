@@ -11,7 +11,7 @@ body {
   margin: 0;
   background-color: $color-navy-bg;
   color: $color-off-white-text;
-  font-family: 'The Seasons', serif; // Fonte padrão para o corpo
+  font-family: 'Great Vibes', serif; // Fonte padrão para o corpo
   -webkit-font-smoothing: antialiased;
 }
 
@@ -28,7 +28,7 @@ h1, h2, h3 {
 
 @font-face {
   font-family: 'The Seasons';
-  src: url('/TheSeasons-Regular.otf') format('opentype');
+  src: url("assets/fonts/TheSeasons-Regular.otf") format('opentype');
   font-weight: normal;
   font-style: normal;
   unicode-range: U+0000-0020, U+0022-0027, U+002A-002C, U+002E, U+0030-007F, U+00A0-00FF;
@@ -36,7 +36,7 @@ h1, h2, h3 {
 
 @font-face {
   font-family: 'The Seasons';
-  src: url('/TheSeasons-Bold.otf') format('opentype');
+  src: url("assets/fonts/TheSeasons-Bold.otf") format('opentype');
   font-weight: bold;
   font-style: normal;
   unicode-range: U+0000-0020, U+0022-0027, U+002A-002C, U+002E, U+0030-007F, U+00A0-00FF;
@@ -44,7 +44,7 @@ h1, h2, h3 {
 
 @font-face {
   font-family: 'Amsterdam Four';
-  src: url('/amsterdam-four.ttf') format('truetype');
+  src: url("assets/fonts/amsterdam-four.ttf") format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap; 
